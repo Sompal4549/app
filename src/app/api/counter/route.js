@@ -1,0 +1,7 @@
+import { NextResponse } from "next/server";
+export async function POST(request, context) {
+  const body = await request.json();
+  const { amount = 1 } = body;
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  return NextResponse.json({ data: amount });
+}
